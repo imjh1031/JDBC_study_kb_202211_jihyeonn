@@ -1,4 +1,4 @@
-package main.java.com.study.jdbc.main;
+package main.java.com.study.jdbc.main.dml;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import main.java.com.study.jdbc.util.DBConnection;
 
-public class JdbcTest1 {
+public class JdbcSelect1 {
 
 	public static void main(String[] args) {
 		Connection connection = DBConnection.getInstance().getConnection();
@@ -19,7 +19,7 @@ public class JdbcTest1 {
 			PreparedStatement pstmt = connection.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 			
-			System.out.println("id\tname\t\tscore");
+			System.out.println("id\t name\t\t score");
 			
 			while(rs.next()) {
 				System.out.println("id: " + rs.getInt(1) 
